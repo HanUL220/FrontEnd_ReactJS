@@ -13,7 +13,8 @@ const ListEmployeeComponent = () => {
     }, [])
 
     function getAllEmployees() {
-        listEmployees().then((response) => {
+        listEmployees()
+        .then((response) => {
             setEmployees(response.data);
         }).catch(error => {
             console.error(error);
@@ -30,7 +31,7 @@ const ListEmployeeComponent = () => {
     function removeEmployee(id){
         console.log(id);
 
-        deleteEmployee(id).then((response) =>{
+        deleteEmployee(id).then(() =>{
             getAllEmployees();
         }).catch(error => {
             console.error(error);
